@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cricut-friendly fonts tested on vinyl, HTV and stickers. Clean cuts, easier weeding and readable text for real Cricut projects.">
-    <title>Cricut-Friendly Fonts: Clean Cuts for Vinyl & HTV</title>
+    <title>Cricut Fonts That Cut Clean | Curated Creative Fabrica Picks</title>
 
-    <!-- Tailwind CSS (via CDN) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    colors: {
+                        brand: {
+                            dark: '#020617',
+                            emerald: '#065f46',
+                            emeraldLight: '#10b981',
+                            gold: '#c5a059',
+                            sand: '#f8f5f2',
+                            white: '#ffffff'
+                        }
+                    },
                     fontFamily: {
                         sans: ['Lato', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                     },
-                    colors: {
-                        cricut: {
-                            dark: '#0f3c36',
-                            DEFAULT: '#196b60',
-                            gold: '#b45309',
-                            cream: '#fdfbf7',
-                            stone: '#e7e5e4',
-                        }
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop')",
+                        'texture-paper': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
                     }
                 }
             }
@@ -37,491 +42,509 @@
     </script>
 
     <style>
-        body {
-            background-color: #fdfbf7;
-            color: #1c1917;
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        html { scroll-behavior: smooth; }
-        .hover-underline-animation {
-            display: inline-block;
-            position: relative;
+
+        .gold-gradient-text {
+            background: linear-gradient(to right, #c5a059, #e5c585, #c5a059);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
         }
-        .hover-underline-animation::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: currentColor;
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
         }
-        .hover-underline-animation:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
+
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.18);
         }
     </style>
 </head>
-<body class="antialiased font-sans bg-cricut-cream">
+<body class="font-sans text-slate-800 antialiased bg-brand-sand">
 
-    <!-- Header -->
-    <header class="w-full py-6 absolute top-0 left-0 z-50">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-serif font-bold tracking-wide text-white drop-shadow-md">
-                Cricut Font Collection
-            </div>
-            <a href="#fonts" class="text-white/90 hover:text-white text-sm font-semibold tracking-widest uppercase hover-underline-animation drop-shadow-md">
-                View Collection
-            </a>
-        </div>
-    </header>
-
-    <main>
-        <!-- HERO -->
-        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-gray-900">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1502005229766-31e4794e9f90?q=80&w=2070&auto=format&fit=crop" alt="Creative workspace background" class="w-full h-full object-cover opacity-50">
-                <div class="absolute inset-0 bg-gradient-to-r from-cricut-dark/90 to-cricut-dark/60 mix-blend-multiply"></div>
-                <div class="absolute inset-0 bg-black/40"></div>
-            </div>
-
-            <div class="container mx-auto px-6 relative z-10 pt-20">
-                <div class="max-w-4xl mx-auto text-center md:text-left">
-                    <span class="inline-block py-1 px-4 border border-white/30 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs md:text-sm font-semibold tracking-widest uppercase mb-6">
-                        For vinyl, HTV, stickers & cards
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl font-serif font-bold tracking-wide text-brand-dark">
+                        CRICUT<span class="text-brand-emerald">.FONTS</span>
                     </span>
-                    <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-white drop-shadow-lg">
-                        Cricut Fonts That Cut Clean<br class="hidden md:block" /> <span class="italic text-cricut-stone">and</span> Stay Readable
-                    </h1>
-                    <div class="flex flex-col md:flex-row items-start gap-12">
-                        <div class="md:w-2/3">
-                            <p class="text-xl md:text-2xl text-stone-200 mb-4 font-light leading-relaxed">
-                                Tested on real Cricut projects, not just in mockups.
-                            </p>
-                            <p class="text-base md:text-lg text-stone-300 mb-4 leading-relaxed max-w-2xl">
-                                If you own a Cricut, you already know this: some fonts look beautiful on screen but fall apart the moment you start cutting. Thin swirls tear, tiny letters lift from the mat, and a simple label can eat up an evening.
-                            </p>
-                            <p class="text-base md:text-lg text-stone-300 mb-8 leading-relaxed max-w-2xl">
-                                This page collects a small set of Cricut‑friendly fonts that keep letters solid, readable and fast to weed, so you spend more time making and less time fixing.
-                            </p>
-                            <a href="https://www.creativefabrica.com/fonts/cricut-fonts/ref/5466775/?campaign=cricut-fonts"
-                               class="inline-block bg-white text-cricut-dark hover:bg-stone-100 font-serif font-bold text-lg py-4 px-10 rounded-sm transition duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
-                                See Cricut‑Ready Fonts
-                            </a>
-                        </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-10 text-xs font-semibold tracking-[0.2em] uppercase">
+                    <a href="#why" class="text-gray-500 hover:text-brand-emerald transition">Why fonts matter</a>
+                    <a href="#sets" class="text-gray-500 hover:text-brand-emerald transition">Curated sets</a>
+                    <a href="#faq" class="text-gray-500 hover:text-brand-emerald transition">FAQ</a>
+                    <a href="#start" class="px-7 py-3 bg-brand-dark text-white hover:bg-brand-emerald transition shadow-lg">
+                        Start creating
+                    </a>
+                </div>
+                <div class="md:hidden text-2xl text-brand-dark">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-                        <div class="hidden md:block md:w-1/3 mt-8 md:mt-0">
-                            <div class="relative bg-white p-3 shadow-2xl rotate-3 hover:rotate-0 transition duration-500 ease-out">
-                                <div class="aspect-[3/4] bg-stone-200 overflow-hidden relative">
-                                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop" alt="Finished Cricut project" class="w-full h-full object-cover">
+    <!-- Hero -->
+    <section class="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop" alt="Cricut crafting desk" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/75 to-brand-emerald/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24">
+            <div class="md:w-2/3 lg:w-1/2">
+                <span class="inline-block py-1 px-3 border border-brand-gold/60 text-brand-gold text-[11px] font-semibold tracking-[0.25em] uppercase mb-6 bg-black/20 backdrop-blur-sm">
+                    Fonts curated for Cricut makers
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
+                    Cricut fonts that<br>
+                    <span class="gold-gradient-text italic font-semibold">cut clean and look custom</span>
+                </h1>
+                <p class="text-base md:text-lg text-gray-200 font-light mb-8 leading-relaxed">
+                    One project can look handmade or high‑end depending on the font.  
+                    This page collects tried Cricut‑friendly fonts from Creative Fabrica that stay readable after cutting and work on mugs, shirts, stickers and signs.
+                </p>
+
+                <div class="space-y-3 text-sm text-gray-200 mb-8">
+                    <div class="flex items-start gap-3">
+                        <span class="mt-1 text-brand-gold"><i class="fas fa-check"></i></span>
+                        <p>Works with Cricut Design Space: install on your computer and pick the font inside your usual projects.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="mt-1 text-brand-gold"><i class="fas fa-check"></i></span>
+                        <p>Curved, scripted and bold styles tested on vinyl, cardstock and HTV for everyday crafts.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- Category link -->
+                    <a href="https://www.creativefabrica.com/fonts/cricut-fonts/ref/5466775/?campaign=cricut-fonts"
+                       target="_blank" rel="noopener noreferrer"
+                       class="px-10 py-4 bg-gradient-to-r from-brand-gold to-[#d4af37] text-brand-dark font-bold tracking-[0.25em] text-xs md:text-sm uppercase text-center hover:shadow-[0_0_25px_rgba(197,160,89,0.6)] transition">
+                        Browse all Cricut fonts
+                    </a>
+                    <a href="#sets"
+                       class="px-10 py-4 border border-white/30 text-white font-semibold tracking-[0.25em] text-xs md:text-sm uppercase text-center hover:bg-white hover:text-brand-dark transition backdrop-blur-sm">
+                        See curated sets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why fonts matter (Problem / Scenario / Solution) -->
+    <section id="why" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 md:items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-5">
+                        When a pretty font becomes hard to weed
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        A script font looks perfect on the screen, but once Cricut cuts it on vinyl every loop turns into tiny islands.  
+                        Weeding takes longer than the whole design and half of the curls stretch or tear.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Another common situation: a bold quote looks fine in Design Space, yet on a small mug the letters fuse together.  
+                        After pressing the decal it is hard to read a short word from arm’s length.
+                    </p>
+                    <p class="text-gray-700 font-semibold">
+                        The goal of this page is simple: show fonts that stay legible in real Cricut projects and do not turn every mug or shirt into a weeding challenge.
+                    </p>
+                </div>
+                <div class="bg-brand-sand border border-brand-gold/30 p-6 md:p-7 glass-panel">
+                    <h3 class="text-sm font-semibold tracking-[0.25em] uppercase text-brand-emerald mb-4">
+                        How the fonts on this page are used
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li class="flex gap-3">
+                            <span class="mt-1 text-brand-gold"><i class="fas fa-mug-hot"></i></span>
+                            <span>Names and short phrases on mugs and tumblers where every letter must stay clear after pressing.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="mt-1 text-brand-gold"><i class="fas fa-tshirt"></i></span>
+                            <span>Large quotes and family slogans on cotton shirts cut from HTV and pressed in one pass.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="mt-1 text-brand-gold"><i class="fas fa-sticky-note"></i></span>
+                            <span>Label sets and planner stickers where small text needs clean edges at 0.5–1 inch height.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="mt-1 text-brand-gold"><i class="fas fa-home"></i></span>
+                            <span>Farmhouse‑style wooden signs with long words that should read from across the room.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated sets -->
+    <section id="sets" class="py-24 bg-gradient-to-b from-brand-dark to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-14 border-b border-gray-700 pb-8">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-2">
+                        Cricut‑ready font picks
+                    </h2>
+                    <p class="text-gray-400 text-sm">
+                        Use these fonts as a starting point for mugs, shirts, labels and farmhouse decor.
+                    </p>
+                </div>
+                <a href="https://www.creativefabrica.com/fonts/cricut-fonts/ref/5466775/?campaign=cricut-fonts"
+                   target="_blank" rel="noopener noreferrer"
+                   class="mt-4 md:mt-0 text-xs tracking-[0.25em] uppercase font-semibold text-brand-gold hover:text-white transition">
+                    View full Cricut collection <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Set 1: Script for names and glitter projects -->
+                <div class="hover-lift bg-slate-900/60 border border-white/10 rounded-none overflow-hidden flex flex-col">
+                    <div class="relative h-40">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-gold/40 via-transparent to-brand-dark"></div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-6">
+                            <p class="text-[11px] tracking-[0.3em] uppercase text-brand-gold font-semibold mb-1">Names & mugs</p>
+                            <h3 class="text-2xl font-serif font-semibold italic">Script for personal gifts</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3 text-sm text-gray-200 mb-4">
+                            <p>
+                                Use these scripts when a project needs that handwritten feel: first names on mugs, “thank you” tags, glitter decals and layered quotes.
+                            </p>
+                            <p>
+                                Letters connect well for cutting and still stay separate enough to weed without fighting every loop.
+                            </p>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <!-- I Love Glitter -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-heart"></i></span>
+                                <div>
+                                    <p class="font-semibold">I Love Glitter</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        Works for name decals with little hearts and swashes between words.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/i-love-glitter-font/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Heartbeat -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-wave-square"></i></span>
+                                <div>
+                                    <p class="font-semibold">Heartbeat</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        Good for couple shirts, baby announcement signs and gift boxes with short phrases.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/heartbeat-45/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- PROBLEM -->
-        <section class="py-24 relative overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=1974&auto=format&fit=crop" alt="Texture" class="w-full h-full object-cover opacity-5 grayscale">
-            </div>
-            <div class="absolute inset-0 bg-cricut-cream/95 z-0"></div>
-
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="flex flex-col md:flex-row items-center gap-16">
-                    <div class="w-full md:w-1/2 order-2 md:order-1 relative">
-                        <div class="absolute -top-4 -left-4 w-full h-full border-2 border-cricut-dark/10 z-0"></div>
-                        <div class="relative z-10 bg-white p-4 shadow-xl">
-                            <div class="aspect-square bg-stone-200 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?q=80&w=1974&auto=format&fit=crop" alt="Crumpled paper and messy desk" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                            </div>
-                            <p class="text-center text-xs text-stone-400 mt-2 font-serif italic tracking-widest">THE FRUSTRATION</p>
+                <!-- Set 2: Everyday quotes and shirts -->
+                <div class="hover-lift bg-slate-900/60 border border-white/10 rounded-none overflow-hidden flex flex-col">
+                    <div class="relative h-40">
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-emerald/50 via-transparent to-brand-dark"></div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-6">
+                            <p class="text-[11px] tracking-[0.3em] uppercase text-brand-gold font-semibold mb-1">T‑shirts & tumblers</p>
+                            <h3 class="text-2xl font-serif font-semibold">Everyday quote fonts</h3>
                         </div>
                     </div>
-
-                    <div class="w-full md:w-1/2 order-1 md:order-2">
-                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-cricut-dark">
-                            Why Many Fonts <br/><span class="italic text-cricut-gold">Fail on Cricut</span>
-                        </h2>
-                        <div class="space-y-6 text-lg text-stone-700 font-light leading-relaxed">
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3 text-sm text-gray-200 mb-4">
                             <p>
-                                Most display fonts are drawn for posters and screens, not for cutting machines. Strokes get too thin for vinyl or HTV, counters close up when you shrink text, and delicate curls turn into tiny islands your blade has to fight through.
+                                These fonts work for bold statements on shirts and tumblers where the message carries the whole design.
                             </p>
-                            <div class="border-l-4 border-cricut-gold pl-6 py-2 italic text-stone-600 bg-white/50 backdrop-blur-sm rounded-r-md">
-                                You see this every time a “cute” script turns names into a knot, or when a long quote becomes unreadable once you size it down.
+                            <p>
+                                Long words remain readable after pressing and look balanced on medium and large surfaces.
+                            </p>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <!-- Better Together -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-user-friends"></i></span>
+                                <div>
+                                    <p class="font-semibold">Better Together</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        Fits couple shirts, anniversary gifts and matching family outfits where the phrase is the main focus.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/better-together-63/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <p>
-                                The letters may technically cut, but weeding them is slow and unforgiving, and any small mistake forces you to start over.
-                            </p>
+                            <!-- Rushton -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-bold"></i></span>
+                                <div>
+                                    <p class="font-semibold">Rushton</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        A strong choice for one‑line quotes on signs and sweatshirts where you need clear block letters.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/rushton/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Big Adventure -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-mountain"></i></span>
+                                <div>
+                                    <p class="font-semibold">Big Adventure</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        Works for travel mugs, camping shirts and kids’ trip outfits with playful, legible letters.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/big-adventure/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- SOLUTION -->
-        <section class="py-24 bg-white relative">
-            <div class="absolute top-0 right-0 w-1/3 h-full bg-stone-50 z-0 hidden lg:block"></div>
-            
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="max-w-4xl mx-auto text-center mb-16">
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-cricut-dark">
-                        Fonts Picked for Cutting, Not Just Looks
-                    </h2>
-                    <p class="text-xl text-stone-600 font-light">
-                        These fonts were chosen with Cricut projects in mind: thicker minimum stroke, clean shapes, and letter connections that survive cutting at real sizes.
+                <!-- Set 3: Kids, labels and farmhouse signs -->
+                <div class="hover-lift bg-slate-900/60 border border-white/10 rounded-none overflow-hidden flex flex-col">
+                    <div class="relative h-40">
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-brand-gold/35 to-brand-emerald/40"></div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-6">
+                            <p class="text-[11px] tracking-[0.3em] uppercase text-brand-gold font-semibold mb-1">Kids & farmhouse</p>
+                            <h3 class="text-2xl font-serif font-semibold">Labels and cozy decor</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3 text-sm text-gray-200 mb-4">
+                            <p>
+                                For kids’ rooms, pantry labels and farmhouse‑style signs the font must feel friendly and still be easy to cut at smaller sizes.
+                            </p>
+                            <p>
+                                The fonts below cover handwriting for school projects and rustic lettering for wooden boards.
+                            </p>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <!-- Children Writing -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-child"></i></span>
+                                <div>
+                                    <p class="font-semibold">Children Writing</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        Great for school labels, reward charts and kids’ room signs where the text should look like real handwriting.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/children-writing/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Farmhouse Moment -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-home-heart"></i></span>
+                                <div>
+                                    <p class="font-semibold">Farmhouse Moment</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        Fits kitchen boards, entryway signs and seasonal decor with that classic farmhouse look.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/farmhouse-moment/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Hey Magnolia -->
+                            <div class="flex items-start gap-3">
+                                <span class="mt-1 text-brand-gold"><i class="fas fa-leaf"></i></span>
+                                <div>
+                                    <p class="font-semibold">Hey Magnolia</p>
+                                    <p class="text-gray-300 text-xs mb-2">
+                                        Use for soft quotes on bedroom signs, nursery decor and gentle seasonal pieces.
+                                    </p>
+                                    <a href="https://www.creativefabrica.com/product/hey-magnolia/ref/5466775/?campaign=cricut-fonts"
+                                       target="_blank" rel="noopener noreferrer"
+                                       class="inline-flex items-center text-[11px] tracking-[0.22em] uppercase text-brand-gold hover:text-white">
+                                        See on Creative Fabrica <i class="fas fa-arrow-up-right-from-square ml-2 text-[9px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Extra note about using bundles -->
+            <div class="mt-14 max-w-3xl text-sm text-gray-300">
+                <h3 class="text-sm font-semibold tracking-[0.25em] uppercase text-brand-gold mb-3">
+                    Want more options in one place?
+                </h3>
+                <p class="mb-3">
+                    Instead of searching font by font, you can start from the Cricut font category on Creative Fabrica and save several styles to a test project in Design Space.
+                </p>
+                <p>
+                    Type one phrase, copy the text layer and switch fonts to see which option weeds faster and stays readable at the size you plan to cut.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to start (short, concrete steps + CTA) -->
+    <section id="start" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-4">
+                    How to start using these Cricut fonts today
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    The process is simple: download, install, open Cricut Design Space and test your phrase before cutting on real material.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-sm text-gray-700 mb-10">
+                <div class="bg-brand-sand p-6 border border-brand-gold/30">
+                    <p class="text-xs font-semibold tracking-[0.25em] uppercase text-brand-emerald mb-2">Step 1</p>
+                    <h3 class="font-serif font-semibold mb-2">Pick a font from this page</h3>
+                    <p>Choose a font that fits your project: script for names, bold for quotes or farmhouse for signs.</p>
+                </div>
+                <div class="bg-brand-sand p-6 border border-brand-gold/30">
+                    <p class="text-xs font-semibold tracking-[0.25em] uppercase text-brand-emerald mb-2">Step 2</p>
+                    <h3 class="font-serif font-semibold mb-2">Download and install</h3>
+                    <p>Download the font from Creative Fabrica, install it on your computer and restart Cricut Design Space.</p>
+                </div>
+                <div class="bg-brand-sand p-6 border border-brand-gold/30">
+                    <p class="text-xs font-semibold tracking-[0.25em] uppercase text-brand-emerald mb-2">Step 3</p>
+                    <h3 class="font-serif font-semibold mb-2">Test before cutting</h3>
+                    <p>Type your phrase, resize it to real project size and check how letters look before sending to the mat.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="inline-block glass-panel p-2">
+                    <a href="https://www.creativefabrica.com/fonts/cricut-fonts/ref/5466775/?campaign=cricut-fonts"
+                       target="_blank" rel="noopener noreferrer"
+                       class="block px-12 py-4 bg-brand-dark hover:bg-brand-emerald text-white font-semibold tracking-[0.25em] uppercase text-xs md:text-sm">
+                        Open Cricut font collection on Creative Fabrica
+                    </a>
+                </div>
+                <p class="mt-4 text-gray-500 text-xs max-w-md mx-auto">
+                    Every purchase through the links on this page supports this curated guide at no extra cost to you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-brand-sand">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-serif font-bold text-center text-brand-dark mb-12">
+                Cricut font questions, answered
+            </h2>
+
+            <div class="space-y-6 text-sm text-gray-700">
+                <div class="bg-white p-7 shadow-sm border-l-2 border-brand-gold">
+                    <h3 class="font-serif font-semibold text-lg text-brand-dark mb-2">
+                        Do these fonts work with Cricut Design Space?
+                    </h3>
+                    <p>
+                        Yes. Install the font on your Windows or Mac computer and open Cricut Design Space.  
+                        The font appears in the system font list and can be used like other installed fonts.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                    <div class="bg-cricut-cream p-8 text-center border border-stone-100 hover:shadow-lg transition">
-                        <div class="w-12 h-12 bg-cricut-dark text-white rounded-full flex items-center justify-center mx-auto mb-4 font-serif text-xl italic">1</div>
-                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Thicker Strokes</h3>
-                        <p class="text-stone-600 text-sm">
-                            Use them for vinyl decals and iron‑on designs without constant tearing.
-                        </p>
-                    </div>
-                    <div class="bg-cricut-cream p-8 text-center border border-stone-100 hover:shadow-lg transition">
-                        <div class="w-12 h-12 bg-cricut-dark text-white rounded-full flex items-center justify-center mx-auto mb-4 font-serif text-xl italic">2</div>
-                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Commercial License</h3>
-                        <p class="text-stone-600 text-sm">
-                            Put these letters on shirts, mugs, signs and printables you sell.
-                        </p>
-                    </div>
-                    <div class="bg-cricut-cream p-8 text-center border border-stone-100 hover:shadow-lg transition">
-                        <div class="w-12 h-12 bg-cricut-dark text-white rounded-full flex items-center justify-center mx-auto mb-4 font-serif text-xl italic">3</div>
-                        <h3 class="font-serif text-xl font-bold text-gray-900 mb-2">Kept in One Library</h3>
-                        <p class="text-stone-600 text-sm">
-                            All fonts come from the same source, so you keep downloads and updates in one place.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- HOW IT WORKS -->
-        <section class="py-24 relative overflow-hidden bg-cricut-dark">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=2070&auto=format&fit=crop" alt="Dark workspace" class="w-full h-full object-cover opacity-10 mix-blend-overlay">
-            </div>
-            
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="flex flex-col lg:flex-row gap-16 items-center">
-                    <div class="lg:w-1/2">
-                        <span class="text-cricut-gold font-bold tracking-widest text-sm uppercase mb-2 block">Quick Guide</span>
-                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-white">How to Use These Fonts with Cricut</h2>
-                        <div class="space-y-10">
-                            <div class="flex group">
-                                <div class="flex-shrink-0 mr-6">
-                                    <span class="block w-12 h-12 border border-white/20 rounded-full text-center leading-[46px] font-serif text-2xl text-cricut-gold group-hover:bg-cricut-gold group-hover:text-white transition-colors">1</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold text-white mb-2 font-serif">Download & Install</h4>
-                                    <p class="text-stone-300 font-light">
-                                        Download the font file and install it on your computer (OTF or TTF).
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex group">
-                                <div class="flex-shrink-0 mr-6">
-                                    <span class="block w-12 h-12 border border-white/20 rounded-full text-center leading-[46px] font-serif text-2xl text-cricut-gold group-hover:bg-cricut-gold group-hover:text-white transition-colors">2</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold text-white mb-2 font-serif">Restart Design Space</h4>
-                                    <p class="text-stone-300 font-light">
-                                        Restart Cricut Design Space so it can see the new system font.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="flex group">
-                                <div class="flex-shrink-0 mr-6">
-                                    <span class="block w-12 h-12 border border-white/20 rounded-full text-center leading-[46px] font-serif text-2xl text-cricut-gold group-hover:bg-cricut-gold group-hover:text-white transition-colors">3</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold text-white mb-2 font-serif">Select & Cut</h4>
-                                    <p class="text-stone-300 font-light">
-                                        In the Text tool, switch to “System” and type the font name — your new font appears and is ready to cut.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="lg:w-1/2 w-full">
-                        <div class="relative rounded-sm p-2 border border-white/10 bg-white/5 backdrop-blur-sm">
-                            <div class="aspect-video bg-gray-800 overflow-hidden relative shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=2070&auto=format&fit=crop" alt="Laptop usage" class="w-full h-full object-cover opacity-80 mix-blend-overlay">
-                                <div class="absolute inset-0 flex flex-col items-center justify-center text-white/40 p-6 text-center border-2 border-dashed border-white/10 m-4">
-                                    <span class="font-serif italic text-lg">Design Space “System Fonts” tab</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FONTS -->
-        <section id="fonts" class="py-24 bg-stone-100 relative">
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="text-center mb-16">
-                    <span class="text-cricut-gold font-bold tracking-widest text-xs uppercase mb-3 block">The Collection</span>
-                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-cricut-dark">Eight Cricut‑Friendly Fonts</h2>
+                <div class="bg-white p-7 shadow-sm border-l-2 border-brand-gold">
+                    <h3 class="font-serif font-semibold text-lg text-brand-dark mb-2">
+                        Can I use these fonts for items I sell?
+                    </h3>
+                    <p>
+                        Creative Fabrica provides the commercial license, so you can use the fonts on physical products you sell.  
+                        Always double‑check the license details on the font page before starting a large batch of products.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                    <!-- 1 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop" alt="Wall decal mockup" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                Heart-Link Script for Names &amp; Dates
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">For Names & Quotes</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Script with heart‑shaped links between names for gifts, couple mugs and wall pieces.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/i-love-glitter-font/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 2 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?q=80&w=2070&auto=format&fit=crop" alt="Coffee mug" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                Curved Script for Quotes &amp; Phrases
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">For Mugs & Cards</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Smooth script for short quotes and romantic phrases. Rounded curves cut cleanly and weed in one pass.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/better-together-63/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 3 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2080&auto=format&fit=crop" alt="Cotton T-shirt" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                Soft Signature Font for Elegant Labels
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">For Shirts & Tags</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Relaxed signature‑style script for labels, gift tags and apparel designs that still cut in one piece.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/hey-magnolia/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 4 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?q=80&w=1974&auto=format&fit=crop" alt="Jars with labels" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                Chunky Letters for Shirts & Wall Decals
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">For Bold Labels</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Thick, playful letters for t‑shirts, hoodies and large wall decals. Strokes stay strong after cutting and pressing.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/big-adventure/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 5 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=2075&auto=format&fit=crop" alt="Kids toys" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                Inline Script for Romantic Crafts
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">For Gifts & Decor</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Script with a subtle inline effect for love‑themed gifts and wedding decor. Works best at medium sizes.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/heartbeat-45/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 6 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1555505019-8c4f1c0b1348?q=80&w=2070&auto=format&fit=crop" alt="Stationery cards" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                Handwritten Font for School & Family Projects
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">For Lists & Notes</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Looks like neat children’s handwriting, suitable for chore charts, school labels and family planners.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/children-writing/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 7 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1629196914375-f7e48f477b6d?q=80&w=2006&auto=format&fit=crop" alt="Wood texture" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                Farmhouse Serif for Kitchen & Home Signs
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">For Farmhouse Signs</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Serif font for rustic kitchen boards, pantry labels and porch signs that need to stay legible from a distance.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/farmhouse-moment/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- 8 -->
-                    <div class="bg-white group hover:-translate-y-2 transition duration-500 ease-out shadow-lg hover:shadow-2xl overflow-hidden flex flex-col">
-                        <div class="h-48 bg-stone-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?q=80&w=2070&auto=format&fit=crop" alt="Craft tools" class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90">
-                        </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <h3 class="font-serif text-2xl font-bold text-gray-900 mb-1 group-hover:text-cricut-gold transition">
-                                All‑Purpose Sans Serif for Everyday Labels
-                            </h3>
-                            <p class="text-xs uppercase tracking-wide text-stone-400 mb-4 font-bold">The Workhorse</p>
-                            <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-grow">
-                                Neutral, all‑round font for containers, organizers and simple quote designs that must stay readable at small sizes.
-                            </p>
-                            <a href="https://www.creativefabrica.com/product/rushton/ref/5466775/?campaign=cricut-fonts" class="text-cricut-dark text-sm font-bold border-b border-cricut-dark/30 hover:border-cricut-dark pb-1 inline-block self-start transition">
-                                View font details →
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="mt-16 text-center">
-                    <a href="https://www.creativefabrica.com/fonts/cricut-fonts/ref/5466775/?campaign=cricut-fonts" class="inline-block border-2 border-cricut-dark text-cricut-dark hover:bg-cricut-dark hover:text-white font-serif font-bold text-lg py-4 px-10 rounded-sm transition duration-300">
-                        See All Cricut‑Ready Fonts
-                    </a>
+                <div class="bg-white p-7 shadow-sm border-l-2 border-brand-gold">
+                    <h3 class="font-serif font-semibold text-lg text-brand-dark mb-2">
+                        How small can I cut these fonts?
+                    </h3>
+                    <p>
+                        For most projects, keep script fonts at least 0.75–1 inch tall and bold fonts at 0.5 inch or larger.  
+                        If a design includes very thin strokes, make a small test cut on scrap material before cutting the final project.
+                    </p>
                 </div>
             </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="py-24 relative overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?q=80&w=2070&auto=format&fit=crop" alt="Craft table background" class="w-full h-full object-cover opacity-10">
-            </div>
-            <div class="absolute inset-0 bg-white/90 z-0"></div>
-            
-            <div class="container mx-auto px-6 max-w-3xl relative z-10">
-                <h2 class="font-serif text-4xl font-bold text-cricut-dark mb-12 text-center">Questions Before You Start Cutting</h2>
-                
-                <div class="space-y-4">
-                    <div class="bg-white/80 backdrop-blur-sm p-6 border border-stone-100 shadow-sm rounded-sm">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif">Q. Are these fonts safe for small text on labels and tags?</h3>
-                        <p class="text-stone-600 leading-relaxed font-light">
-                            A lot depends on the material and your blade, but these fonts were chosen because their strokes do not collapse immediately at small sizes. For very tiny text, test a short word first and adjust size until weeding feels comfortable.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/80 backdrop-blur-sm p-6 border border-stone-100 shadow-sm rounded-sm">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif">Q. Can I use these fonts on products I sell?</h3>
-                        <p class="text-stone-600 leading-relaxed font-light">
-                            Yes, these fonts include a commercial license for finished physical products and many printables. Always check the license page for details on logos or large‑scale redistribution of font files.
-                        </p>
-                    </div>
-
-                    <div class="bg-white/80 backdrop-blur-sm p-6 border border-stone-100 shadow-sm rounded-sm">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif">Q. What is the difference between Cricut Fonts and system fonts?</h3>
-                        <p class="text-stone-600 leading-relaxed font-light">
-                            Cricut Fonts live inside Design Space and work on any device you sign into with your account. System fonts (like these) are installed on your computer and show up under the “System” tab in Design Space.
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/80 backdrop-blur-sm p-6 border border-stone-100 shadow-sm rounded-sm">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif">Q. Will these fonts work with other cutting machines?</h3>
-                        <p class="text-stone-600 leading-relaxed font-light">
-                            Yes, if your machine accepts standard font files like OTF or TTF. You can use them with Silhouette, Brother and other cutters once the fonts are installed on the device or computer that runs their software.
-                        </p>
-                    </div>
-
-                    <div class="bg-white/80 backdrop-blur-sm p-6 border border-stone-100 shadow-sm rounded-sm">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif">Q. What is the best way to test a new font?</h3>
-                        <p class="text-stone-600 leading-relaxed font-light">
-                            Start with a short word in the material you plan to use most. Cut it at the size you need, weed it slowly and check whether any strokes feel too fragile, then adjust size or switch to a sturdier font from this list.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FINAL CTA -->
-        <section class="py-24 bg-cricut-dark text-white relative overflow-hidden">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
-                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8">
-                    Ready to Try These Fonts on Your Own Projects?
-                </h2>
-                <p class="text-xl text-stone-300 mb-12 leading-relaxed font-light">
-                    Pick one project you already have in mind — a label set, a gift, a shirt, a card — and test it with one or two fonts from this page first. Once you see how they cut, you can build a small library of Cricut‑ready fonts and stop guessing which designs will survive the mat.
-                </p>
-                
-                <div class="flex flex-col md:flex-row justify-center gap-6">
-                    <a href="https://www.creativefabrica.com/fonts/cricut-fonts/ref/5466775/?campaign=cricut-fonts" class="inline-block bg-cricut-gold hover:bg-amber-600 text-white font-serif font-bold text-lg py-4 px-10 rounded-sm transition duration-300 shadow-xl hover:shadow-2xl">
-                        Explore Cricut Fonts
-                    </a>
-                    <a href="#fonts" class="inline-block bg-transparent hover:bg-white/10 text-white border border-white/30 font-serif font-bold text-lg py-4 px-10 rounded-sm transition duration-300">
-                        Back to Font List
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-stone-900 py-12 border-t border-stone-800 text-stone-500">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-serif text-2xl font-bold text-stone-400">
-                Cricut Font Collection
+    <footer class="bg-brand-dark text-gray-400 py-14 border-t border-white/10 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div>
+                <span class="text-xl font-serif font-bold text-white block mb-4">CRICUT.FONTS GUIDE</span>
+                <p class="opacity-75 leading-relaxed">
+                    A curated selection of fonts from Creative Fabrica that work well in everyday Cricut projects: mugs, T‑shirts, labels and farmhouse signs.
+                </p>
             </div>
-            <div class="text-sm text-center md:text-right">
-                <p class="mb-2">&copy; 2026. All rights reserved.</p>
-                <p>Affiliate disclosure: links on this page may earn a small commission from purchases at no extra cost to you.</p>
+
+            <div class="flex flex-col space-y-2">
+                <h4 class="text-white font-semibold uppercase tracking-[0.25em] text-[11px] mb-2">Quick links</h4>
+                <a href="#why" class="hover:text-brand-gold transition">Why fonts matter for Cricut</a>
+                <a href="#sets" class="hover:text-brand-gold transition">Curated font sets</a>
+                <a href="#faq" class="hover:text-brand-gold transition">FAQ</a>
+            </div>
+
+            <div>
+                <p class="opacity-60 text-xs leading-relaxed">
+                    Affiliate disclosure: this page contains affiliate links to Creative Fabrica.  
+                    A commission may be earned on qualifying purchases made through these links, at no additional cost to you.
+                    <br><br>
+                    Cricut is a trademark of Cricut, Inc. This site is not affiliated with or endorsed by Cricut, Inc.
+                </p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Navbar shadow / background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-white/95', 'bg-white');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-white', 'bg-white/95');
+            }
+        });
+    </script>
 </body>
 </html>
